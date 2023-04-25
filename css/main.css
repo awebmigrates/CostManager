@@ -35,7 +35,7 @@
 }
 
 .input:focus {
-    border-color: #bbbbbb;
+   border-color: #000000;
 }
 
 .delete-entry {
