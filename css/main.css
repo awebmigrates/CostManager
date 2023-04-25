@@ -35,7 +35,7 @@
 }
 
 .input:focus {
-   border-color: #000000;
+    border-color: #000000;
 }
 
 .delete-entry {
@@ -60,7 +60,7 @@
     text-align: right;
 }
 
-.download-excel{
+.download-excel {
     margin-top: 38px;
     left: 50%;
     position: absolute;

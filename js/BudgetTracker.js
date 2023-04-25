@@ -29,11 +29,11 @@ export default class BudgetTracker {
                 </thead>
                 <tbody class="entries"></tbody>
                 <tbody>
-                    <tr>
-                        <td colspan="5" class="controls">
-                            <button type="button" class="new-entry">New Entry</button>
-                        </td>
-                    </tr>
+                <tr>
+                    <td colspan="5" class="controls">
+                        <button type="button" class="new-entry">New Entry</button>
+                    </td>
+                </tr>
                 </tbody>
                 <tfoot>
                     <tr>
@@ -56,12 +56,12 @@ export default class BudgetTracker {
                     <input class="input input-date" type="date">
                 </td>
                 <td>
-                    <input class="input input-description" type="text" placeholder="Add a Description (e.g. wages, bills, etc.)">
+                    <input class="input input-description" type="text" placeholder="">
                 </td>
                 <td>
                     <select class="input input-type">
-                        <option value="income">Income</option>
-                        <option value="expense">Expense</option>
+                    <option value="income">Income</option>
+                    <option value="expense">Expense</option>
                     </select>
                 </td>
                 <td>
@@ -131,9 +131,11 @@ export default class BudgetTracker {
         row.querySelectorAll(".input").forEach(input => {
             input.addEventListener("change", () => this.save());
         });
-        
+
         row.querySelector(".input-date").focus();
+
     }
+
 
     getEntryRows() {
         return Array.from(this.root.querySelectorAll(".entries tr"));
@@ -160,11 +162,12 @@ export default class BudgetTracker {
 
         const total = this.root.querySelector(".total").textContent;
         entries.push({ Date: "", Description: "", Type: "Total:", Amount: total });
-    
+
         const date = new Date();
+        const year = date.getFullYear();
         const monthName = date.toLocaleDateString('en-US', { month: 'long' });
-        const filename = `${monthName.toLowerCase()}-costs.xlsx`;
-    
+        const filename = `${monthName.toLowerCase()}-${year}-costs.xlsx`;
+
         const worksheet = XLSX.utils.json_to_sheet(entries);
         const workbook = XLSX.utils.book_new();
         XLSX.utils.book_append_sheet(workbook, worksheet, "Entries");
