@@ -131,6 +131,8 @@ export default class BudgetTracker {
         row.querySelectorAll(".input").forEach(input => {
             input.addEventListener("change", () => this.save());
         });
+        
+        row.querySelector(".input-date").focus();
     }
 
     getEntryRows() {
