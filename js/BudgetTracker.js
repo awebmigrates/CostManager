@@ -61,7 +61,7 @@ export default class BudgetTracker {
                 <td>
                     <select class="input input-type">
                     <option value="income">Income</option>
-                    <option value="expense">Expense</option>
+                    <option value="expense" selected>Expense</option>
                     </select>
                 </td>
                 <td>
@@ -122,7 +122,7 @@ export default class BudgetTracker {
 
         row.querySelector(".input-date").value = entry.date || new Date().toISOString().replace(/T.*/, "");
         row.querySelector(".input-description").value = entry.description || "";
-        row.querySelector(".input-type").value = entry.type || "income";
+        row.querySelector(".input-type").value = entry.type || "expense";
         row.querySelector(".input-amount").value = entry.amount || 0;
         row.querySelector(".delete-entry").addEventListener("click", e => {
             this.onDeleteEntryBtnClick(e);
