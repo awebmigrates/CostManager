@@ -1,3 +1,12 @@
+body {
+    background-image: url(https://images.pexels.com/photos/7130469/pexels-photo-7130469.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.total{
+    font-weight: bold;
+}
+
 .budget-tracker {
     border-collapse: collapse;
     min-width: 750px;

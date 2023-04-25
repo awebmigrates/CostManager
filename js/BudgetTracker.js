@@ -133,7 +133,6 @@ export default class BudgetTracker {
         });
 
         row.querySelector(".input-date").focus();
-
     }
 
 
